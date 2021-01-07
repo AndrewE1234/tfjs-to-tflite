@@ -3,7 +3,7 @@ A simple python script to convert a tfjs-layers model (model.json) to a tflite m
 
 ## Setup
 This script requires the following dependences:
-* [python3](https://www.python.org/downloads/)
+* [python3](https://www.python.org/downloads/) (Tested on 3.7.7)
 * [tensorflow](https://www.tensorflow.org/install/pip)
 * [tensorflowjs](https://pypi.org/project/tensorflowjs/) (python package)
 
