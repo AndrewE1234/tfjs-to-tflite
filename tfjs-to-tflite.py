@@ -11,7 +11,7 @@ if len(sys.argv) <= 1:
 
 fileName = sys.argv[1]
 if fileName == "-h" or fileName == "--help":
-  print("tflite-converter, Andrew Eljumaily 2021\nA simple to use tfjs-layers to tflite converter\n\n Usage: {} <path/to/input/file.json>\n Output will save to /converted/saved_model.h5".format(sys.argv[0]))
+  print("tflite-converter, Andrew Eljumaily 2021\nA simple to use tfjs-layers to tflite converter\n\n Usage: {} <path/to/input/file.json>\n Output will save to /converted/model.tflite".format(sys.argv[0]))
   sys.exit()
 
 # Convert a tfjs layers file to a keras file using tensorflowjs_converter (part of tesnorflowjs)
@@ -27,5 +27,9 @@ converter = tf.lite.TFLiteConverter.from_keras_model(model)
 tflite_model = converter.convert()
 
 # Save the model.
-with open('model1.tflite', 'wb') as f:
+with open('/converted/model.tflite', 'wb') as f:
   f.write(tflite_model)
+
+os.remove("converted/saved_model.h5")
+
+print("Conversion complete!")
